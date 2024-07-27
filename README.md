@@ -89,4 +89,8 @@ python manage.py runserver
 =======
 # College-Management-System
 The aim of this project is to design an intuitive and user-friendly interface accessible to administrators, faculty, and students alike. This interface should simplify navigation and task execution, enhancing overall user experience. 
+<<<<<<< HEAD
 >>>>>>> dc97e578a356366211238d5bcc4cfb658343b70a
+=======
+python manage.py runserver
+>>>>>>> 7139e3804d4011390c97fbd27f5ab40c623cc181
