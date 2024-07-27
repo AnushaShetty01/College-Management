@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  /* Define custom CSS for the contact page */
+  body {
+    background-image: url("{% static 'dist/img/tel.jpg' %}");
+    background-size: cover; /* Cover the entire background with the image */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+  }
+
+  .contact-container {
+    max-width: 400px;
+    margin: 0; /* Reset margin */
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Light background color for the contact form container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10%; /* Adjust the left margin */
+    margin-top: 10%;
+  }
+
+  /* Additional CSS styles for the contact form */
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    background-color: #64a1d0;
+  }
+</style>
+
+<div class="contact-container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form action="/contact" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-submit">Submit</button>
+    </form>
+</div>
+
+{% endblock content %}
